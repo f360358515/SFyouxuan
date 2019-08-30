@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="/font/iconfont.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <script src="/lib/jquery-1.11.0.js"></script>
+    <script src="/lib/jquery.cookie.js"></script>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <img src="/img/tit_bj.jpg" />
+        <div>
+            <div class="header1">
+                <p class="hd_tx1">新用户注册送100元优惠券包</p>
+                <p class="hd_tx2"></p>
+                <div>
+                    <div>冷链配送 顺丰到家 送至：</div>
+                    <div class="hd_place">
+                        <span class="hd_zz">郑州↓</span>
+                        <ul class="hd_ul">
+                            <li>请选择您的收货城市：</li>
+                            <li>北京 上海 广州 深圳 天津 苏州 杭州 南京 无锡 青岛 武汉</li>
+                            <li>更多城市：</li>
+                            <li>华东：上海 浙江 江苏 安徽</li>
+                            <li>华南：广东 福建 海南 广西</li>
+                            <li>华北：北京 天津 河北 山东 山西 内蒙古</li>
+                            <li>东北：辽宁 吉林 黑龙江</li>
+                            <li>西北：陕西 甘肃 宁夏 青海 新疆</li>
+                            <li>西南：重庆 四川云南 贵州 西藏</li>
+                        </ul>
+                    </div>
+                </div>
+                <ul>
+                    <li id="in_jjc">嘿，欢迎来顺丰优选！
+                        <a href="denglu.html">请登录 |</a>
+                        <a href="zhuce.html">免费注册</a>
+                    </li>
+                    <li>我的订单</li>
+                    <li id="hd_tx3">
+                        我的优选<span class="iconfont icon-xiala"></span>
+                        <ul>
+                            <li>我的订单</li>
+                            <li>我的积分</li>
+                            <li>我的收藏卡</li>
+                            <li>我的优选卡</li>
+                            <li>我的优惠券</li>
+                        </ul>
+                    </li>
+                    <li id="hd_tx4"><span class="iconfont icon-save zdxz"></span>移动客户端</li>
+                    <li>在线客服</li>
+                    <li id="hd_tx5">帮助中心
+                        <span class="iconfont icon-xiala"></span>
+                        <ul>
+                            <li>购物指南</li>
+                            <li>配送服务</li>
+                            <li>支付方式</li>
+                            <li>售后服务</li>
+                            <li>客服邮箱</li>
+                            <li>投诉与建议</li>
+                        </ul>
+                    </li>
+                    <li id="hd_tx6">网站导航
+                        <span class="iconfont icon-xiala"></span>
+                        <ul>
+                            <li>
+                                <h2>商品分类</h2>
+                                <p>
+                                    <span>肉类海鲜</span>
+                                    <span>新鲜果蔬</span>
+                                    <span>速食冷藏</span>
+                                </p>
+                                <p>
+                                    <span>酒水饮料</span>
+                                    <span>休闲零食</span>
+                                    <span>粮油干货</span>
+                                </p>
+                                <p>
+                                    <span>冲调茶饮</span>
+                                    <span>优选国际</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h2>特色频道</h2>
+                                <p>
+                                    <span>跨境直发</span>
+                                    <span>企业专区</span>
+                                    <span>红酒廊</span>
+                                </p>
+                                <p>
+                                    <span>寰宇美食</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h2>更多</h2>
+                                <p>
+                                    <span>客户端</span>
+                                    <span>关注我们</span>
+                                </p>
+                                <p>
+                                    <span>客服电话：9533858</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="hd_tx9">
+                        <span class="hd_tx7"></span>
+                        <span class="hd_tx8"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div id="in_tx13">
+            <img src="/img/logo.png" />
+        </div>
+        <div>
+            <input type="text" placeholder="冰淇淋" onfocus="this.placeholder=''" />
+            <span>搜索</span>
+        </div>
+        <div id="in_tx12">
+            <div id="in_tx10">
+                <div id="in_tx11">
+                    <p><span class="iconfont icon-gouwuche"></span>&nbsp;&nbsp;&nbsp;购物车中暂无商品</p>
+                </div>
+                <span class="iconfont icon-gouwuche"></span>
+                <span>我的购物车</span>
+            </div>
+            <span class="num"></span>
+        </div>
+        <div></div>
+    </div>
+
+    <div class="cart-warp">
+        <table class="tab-zdcon">
+            <tr class="tab-v31-tr">
+                <th width="60">全选</th>
+                <th width="540">订单商品</th>
+                <th width="120">单价</th>
+                <th width="120">数量</th>
+                <th width="120">优惠</th>
+                <th width="120">小计</th>
+                <th width="120">操作</th>
+            </tr>
+            <tr class="addline">
+                <td class="tab-zdcon-line">
+                    <input type="checkbox" />
+                </td>
+                <td class="tab-zdcon-line tab-zdcon-add">
+                    <div class="tb3-con">
+                        <div class="tb3-divtu">
+                            <a class="xq" target="_blank">
+                                <img src="" />
+                            </a>
+                        </div>
+                        <div class="tb3-divti">
+                            <a class="xq" target="_blank">
+
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td class="tab-zdcon-line">￥104.00</td>
+                <td class="tab-zdcon-line">
+                    <div class="cart-num">
+                        <ul>
+                            <li>
+                                <a class="cart-numa">-</a>
+                            </li>
+                            <li>
+                                <input type="text" class="cartnum-value" value="0" />
+                            </li>
+                            <li>
+                                <a class="cart-numb">+</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="tab-zdcon-line">
+                    <span><p>￥0.00</p></span>
+                </td>
+                <td class="tab-zdcon-line">
+                    <em>￥0</em>
+                </td>
+                <td>
+                    <p>
+                        <a class="tabdiv-del">删除</a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="footer">
+        <div class="footer_1">
+            <div class="footer_11">
+                <div><img src="/img/footer1.png" /></div>
+                <div><img src="/img/footer2.png" /></div>
+                <div><img src="/img/footer3.png" /></div>
+                <div><img src="/img/footer4.png" /></div>
+            </div>
+        </div>
+        <div class="footer_2">
+            <div class="footer_22">
+                <div class="footer_2_1">
+                    <ul>
+                        <li>9533858</li>
+                        <li>周一至周日09:00-20:00</li>
+                    </ul>
+                </div>
+                <div class="footer_2_2">
+                    <ul>
+                        <li class="footer_2_2_font">购物指南</li>
+                        <li>积分制度</li>
+                        <li>会员介绍</li>
+                        <li>购物流程</li>
+                        <li>常见问题</li>
+                        <li>在线客服</li>
+                    </ul>
+                    <ul>
+                        <li class="footer_2_2_font">配送服务</li>
+                        <li>配送政策</li>
+                        <li>开箱验货</li>
+                        <li>配送运费</li>
+                        <li>配送范围</li>
+                    </ul>
+                    <ul>
+                        <li class="footer_2_2_font">支付方式</li>
+                        <li>货到付款</li>
+                        <li>在线支付</li>
+                        <li>优选卡</li>
+                        <li>发票制度</li>
+                    </ul>
+                    <ul>
+                        <li class="footer_2_2_font">售后服务</li>
+                        <li>退款说明</li>
+                        <li>退换货流程</li>
+                        <li>退换货政策</li>
+                        <li>隐私条款</li>
+                    </ul>
+                    <ul>
+                        <li class="footer_2_2_font">商家中心</li>
+                        <li>商家规则</li>
+                        <li>食品安全规范</li>
+                        <li>委托管理创业招募</li>
+                    </ul>
+                </div>
+                <div class="footer_2_3">
+                    <ul>
+                        <li>手机客户端</li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li>官方微信</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer_3">
+            <div><img src="/img/footer5.png" /></div>
+            <div><img src="/img/footer6.png" /></div>
+            <div><img src="/img/footer7.png" /></div>
+            <div>
+                <p>
+                    <span>关于我们&nbsp;&nbsp;</span>
+                    <span>联系我们&nbsp;&nbsp;</span>
+                    <span>招聘人才&nbsp;&nbsp;</span>
+                    <span>友情链接&nbsp;&nbsp;</span>
+                    <span>Copyright© 顺丰优选 sfbest.com 版权所有&nbsp;&nbsp;</span>
+                </p>
+                <p>
+                    <span>京公网安备11010502026831号 京ICP证&nbsp;&nbsp;</span>
+                    <span>150325号 食品经营许可证&nbsp;&nbsp;</span>
+                    <span>JY11113080533669号 企业营业执照</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/dist/js/cart.min.js"></script>
+</body>
+
+</html>
